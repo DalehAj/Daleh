@@ -18,7 +18,7 @@ nav {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 0 20px;
-  margin: 0;
+  margin: 0px 0px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -365,9 +365,9 @@ padding: 0px;
 
 @media (max-width: 768px) {
   nav{
-    padding: 0px;
+    padding: 0px 5px;
     justify-content: center;
-    margin: 0 5px;
+    margin: 0px;
   }
   .nav-right ul {
   gap: 5px;
