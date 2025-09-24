@@ -197,22 +197,54 @@ img {
   font-size: 1.4rem;
   margin-bottom: 10px;
 }
+
 .a1{
   display: flex;
   justify-content: center;
 }
 
-.skills_card img{
-  width: 30px;
-  height: 30px;
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
-.skills_icons{
-  display: grid;
-  grid-template-columns: repeat(10,1fr);
-  gap: 10px;
-  margin-left: 10px;
+
+.skills_track {
+  display: flex;
+  gap: 40px;
   list-style: none;
+  padding: 0;
+  margin: 20px;
+  animation: scroll 20s linear infinite;
 }
+
+.skills_track li {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;
+  font-size: 14px;    
+  transition: transform 0.3s;      
+}
+
+.skills_track img {
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin-bottom: 6px;
+}
+
+.skills_track span{
+  text-align: center;
+  white-space:nowrap;
+  font-family:monospace;
+}
+/* Infinite scroll animation*/
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /*End Of Skills Cards*/
 
 
@@ -325,6 +357,9 @@ padding: 0px;
   box-shadow: 0 8px 16px 0 rgba(5,199,242, 0.6);
   transform: scale(1.1);
   }
+  .skills_track li:hover {
+  transform: scale(1.2);
+}
   #download_cv:hover{
   transform:scale(1.2);
   background-color: #F45C13;
@@ -398,17 +433,20 @@ padding: 0px;
   overflow: hidden;
 }  
 
-.skills_card:hover {
+.skills_card:active {
   box-shadow: 0 8px 16px 0 rgba(5,199,242, 0.6);
   transform: scale(1.1);
   }
-  #download_cv:hover{
+  .skills_track li:active {
+  transform: scale(1.2);
+}
+  #download_cv:active{
   transform:scale(1.2);
   background-color: #F45C13;
   color: white;
   transition: 0.3s;
   }
-  .card:hover {
+  .card:active {
   box-shadow: 0 8px 16px 0 rgba(5,199,242, 0.6);
   transform: scale(1.1);
   }
@@ -459,17 +497,12 @@ padding: 0px;
     width: 80%;
   }
 
-
   .skills_card {
     width: 90%;
   }
-.skills_icons{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;
-  margin-left: 10px;
-  list-style: none;
-}
+  .skills_track {
+  animation: scroll 10s linear infinite;
+  }
   .contact-text {
     display: none;
   }
